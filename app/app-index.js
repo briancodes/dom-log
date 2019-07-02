@@ -6,7 +6,7 @@ console.log('app-index - lib check:', domLog);
 domLog.setLogToConsole(true).applyBackgroundAll();
 
 domLog.setElementId('app-id');
-
+domLog.log('😉');
 const a = [null, 2, 3, 4, undefined, -Infinity];
 const b = a.map(x => x * 10);
 const c = b.map(x => '' + x);

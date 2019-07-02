@@ -1,6 +1,6 @@
 {
   "name": "@bcodes/dom-log",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Log JSON stringified objects and functions to the DOM - side by side option, terminal styled",
   "author": "briancodes (http://bcodes.io)",
   "private": false,
@@ -12,8 +12,9 @@
   "scripts": {
     "serve": "parcel app/app-index.html  --out-dir app/build --open",
     "build": "microbundle --name domLog",
-    "release": "microbundle && standard-version",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "release": "npm run build && np"
   },
   "source": "lib/index.js",
   "main": "dist/index.js",
@@ -21,7 +22,6 @@
   "umd:main": "dist/index.umd.js",
   "unpkg": "dist/index.umd.js",
   "files": [
-    "lib",
     "dist"
   ],
   "keywords": [
@@ -30,10 +30,21 @@
     "log",
     "JavaScript"
   ],
+  "np": {
+    "yarn": false,
+    "contents": "dist"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
+    "@babel/core": "7.4.5",
+    "@types/jest": "24.0.15",
+    "babel-preset-env": "1.7.0",
     "eslint": "6.0.1",
-    "microbundle": "^0.11.0",
-    "parcel-bundler": "1.12.3",
-    "standard-version": "6.0.1"
+    "jest": "24.8.0",
+    "microbundle": "0.11.0",
+    "np": "5.0.3",
+    "parcel-bundler": "1.12.3"
   }
 }

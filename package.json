@@ -21,7 +21,9 @@
   "module": "dist/index.m.js",
   "umd:main": "dist/index.umd.js",
   "unpkg": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
   "files": [
+    "lib",
     "dist"
   ],
   "keywords": [

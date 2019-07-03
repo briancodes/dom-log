@@ -1,5 +1,6 @@
 node_modules
 app/build
 .cache
+.rts*
 dist
 coverage

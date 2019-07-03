@@ -11,7 +11,7 @@
   },
   "scripts": {
     "serve": "parcel app/app-index.html  --out-dir app/build --open",
-    "build": "microbundle --name domLog",
+    "build": "microbundle --name domLog --no-compress",
     "test": "jest",
     "coverage": "jest --coverage",
     "release": "npm run build && np"
@@ -21,7 +21,6 @@
   "module": "dist/index.m.js",
   "umd:main": "dist/index.umd.js",
   "unpkg": "dist/index.umd.js",
-  "types": "dist/index.d.ts",
   "files": [
     "lib",
     "dist"

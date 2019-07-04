@@ -1,3 +1,8 @@
 {
-  "presets": ["@babel/preset-env"]
+  "env": {
+    // https://github.com/developit/microbundle/pull/396#issuecomment-508366532
+    "test": {
+      "presets": ["@babel/preset-env"]
+    }
+  }
 }

@@ -2,7 +2,7 @@
 
 `npm install @bcodes/dom-log`
 
-## Log Stringified Objects to the DOM
+## Log stringified objects to the DOM
 
  This little library stringifies model objects and appends them to the main `app` element
 

@@ -7,6 +7,7 @@
  This little library stringifies model objects and appends them to the main `app` element
 
  ```typescript
+ import { DomLog } from '@bcodes/dom-log';
  // Supports method chaining and grouped output
  DomLog
   .log(a)

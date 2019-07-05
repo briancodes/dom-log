@@ -1,23 +1,25 @@
-import { domLog } from '../lib/index';
+import { DomLog } from '../lib/index';
 
-domLog.setLogToConsole(true).applyBackgroundAll();
+// These are all defaults except applyBackgroundAll
+DomLog.setElementId('app')
+  .applyBackgroundAll()
+  .scrollIntoView(true)
+  .setFontSizeCss('0.9em')
+  .setLogToConsole(true);
 
-domLog.setElementId('app-id');
-domLog.log('😉');
+DomLog.log('😉');
 const a = [null, 2, 3, 4, undefined, -Infinity];
 const b = a.map(x => x * 10);
 const c = b.map(x => '' + x);
 
-domLog.log(a);
-domLog.log(b);
+DomLog.log(a);
+DomLog.log(b);
 
-domLog
-  .log(b)
+DomLog.log(b)
   .log(c)
   .sideBySide(2);
 
-domLog
-  .log(a)
+DomLog.log(a)
   .log(b)
   .log(c)
   .sideBySide(3);

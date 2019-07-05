@@ -1,4 +1,4 @@
-import { domLog } from '../lib/index';
+import { DomLog } from '../lib/index';
 
 const APP_ID = 'target';
 const MULTI_NEWLINE_SPACE = /[\r\n ]+/gm;
@@ -11,7 +11,7 @@ describe('dom-log', () => {
   const scrollIntoViewSpy = jest.fn();
 
   beforeAll(() => {
-    domLog.setElementId(APP_ID);
+    DomLog.setElementId(APP_ID);
     Element.prototype.scrollIntoView = scrollIntoViewSpy;
   });
 
@@ -24,21 +24,21 @@ describe('dom-log', () => {
   });
 
   it('should be an object with functions', () => {
-    expect(domLog).toBeTruthy();
-    expect(typeof domLog).toEqual('object');
-    expect(typeof domLog.log).toEqual('function');
+    expect(DomLog).toBeTruthy();
+    expect(typeof DomLog).toEqual('object');
+    expect(typeof DomLog.log).toEqual('function');
   });
 
   it('log() - should log to the DOM', () => {
-    domLog.log('a');
+    DomLog.log('a');
     expect(appElement().textContent.trim()).toEqual('a');
     expect(scrollIntoViewSpy).toHaveBeenCalledTimes(1);
   });
 
   it('sideBySide() - should log 2 elements side by side', () => {
-    domLog.log('a');
-    domLog.log('b');
-    domLog.sideBySide(2);
+    DomLog.log('a');
+    DomLog.log('b');
+    DomLog.sideBySide(2);
     const div = appElement().lastElementChild;
     expect(div.children.length).toEqual(2);
     expect(div.children.item(0).textContent.trim()).toEqual('a');
@@ -47,15 +47,15 @@ describe('dom-log', () => {
   });
 
   it('clear() - should clear the DOM element', () => {
-    domLog.log('a');
+    DomLog.log('a');
     expect(appElement().children.length).toEqual(1);
-    domLog.clear();
+    DomLog.clear();
     expect(appElement().children.length).toEqual(0);
   });
 
   it('should display stringified array with: undefined, NaN, Infinity ', () => {
     const arr = [undefined, NaN, Infinity, -Infinity];
-    domLog.log(arr);
+    DomLog.log(arr);
     const result = appElement().textContent.replace(MULTI_NEWLINE_SPACE, '');
 
     expect(result).toEqual('[undefined,NaN,Infinity,-Infinity]');
@@ -63,7 +63,7 @@ describe('dom-log', () => {
 
   it('should display stringified object with: undefined, NaN, Infinity ', () => {
     const obj = { a: undefined, b: NaN, c: Infinity, d: -Infinity };
-    domLog.log(obj);
+    DomLog.log(obj);
     const result = appElement().textContent.replace(MULTI_NEWLINE_SPACE, '');
 
     expect(result).toEqual(

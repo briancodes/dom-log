@@ -1,7 +1,7 @@
 {
   "name": "@bcodes/dom-log",
   "version": "1.0.4",
-  "description": "Log JSON stringified objects and functions to the DOM - side by side option, terminal styled",
+  "description": "Log JSON stringified model objects to the DOM - side by side option, terminal styled",
   "author": "briancodes (http://bcodes.io)",
   "private": false,
   "license": "MIT",
@@ -11,7 +11,7 @@
   },
   "scripts": {
     "serve": "parcel app/app-index.html  --out-dir app/build --open",
-    "build": "microbundle --name domLog --no-compress",
+    "build": "microbundle --name DomLog",
     "test": "jest",
     "coverage": "jest --coverage",
     "release": "npm run build && np"

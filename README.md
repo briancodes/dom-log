@@ -17,7 +17,9 @@
   .sideBySide(4);
   ```
 
- Particularly useful for [StackBlitz](https://stackblitz.com/) and [CodeSandbox](https://codesandbox.io) projects
+ Particularly useful for [StackBlitz](https://stackblitz.com/) and [CodeSandbox](https://codesandbox.io) projects 
+ 
+ [![Edit es6-dom-log-demo](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/es6-dom-log-demo-howwq?fontsize=14)
 
 ---
 

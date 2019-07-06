@@ -4,7 +4,7 @@
 
 ## Log stringified objects to the DOM
 
- This little library stringifies model objects and appends them to the main `app` element
+ This little library stringifies model objects and appends them to the `#app` element
 
  ```typescript
  import { DomLog } from '@bcodes/dom-log';

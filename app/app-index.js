@@ -23,3 +23,10 @@ DomLog.log(a)
   .log(b)
   .log(c)
   .sideBySide(3);
+
+const len = 5;
+Array(len)
+  .fill(0)
+  .map((v, i) => i + 1)
+  .forEach(v => DomLog.log(v));
+DomLog.sideBySide(len);

@@ -35,7 +35,7 @@ describe('dom-log', () => {
     expect(scrollIntoViewSpy).toHaveBeenCalledTimes(1);
   });
 
-  it('sideBySide() - should log 2 elements side by side', () => {
+  it('sideBySide() - should log 2 elements side by side and scroll', () => {
     DomLog.log('a');
     DomLog.log('b');
     DomLog.sideBySide(2);
@@ -53,7 +53,7 @@ describe('dom-log', () => {
     expect(appElement().children.length).toEqual(0);
   });
 
-  it('should display stringified array with: undefined, NaN, Infinity ', () => {
+  it('should display stringified array with: undefined, NaN, Infinity', () => {
     const arr = [undefined, NaN, Infinity, -Infinity];
     DomLog.log(arr);
     const result = appElement().textContent.replace(MULTI_NEWLINE_SPACE, '');
@@ -61,7 +61,7 @@ describe('dom-log', () => {
     expect(result).toEqual('[undefined,NaN,Infinity,-Infinity]');
   });
 
-  it('should display stringified object with: undefined, NaN, Infinity ', () => {
+  it('should display stringified object with: undefined, NaN, Infinity', () => {
     const obj = { a: undefined, b: NaN, c: Infinity, d: -Infinity };
     DomLog.log(obj);
     const result = appElement().textContent.replace(MULTI_NEWLINE_SPACE, '');
@@ -69,5 +69,37 @@ describe('dom-log', () => {
     expect(result).toEqual(
       '{"a":undefined,"b":NaN,"c":Infinity,"d":-Infinity}'
     );
+  });
+
+  it('should display stringified Map as array of iterator', () => {
+    const objA = { a: 1 };
+    const objB = { b: 2 };
+
+    const map = new Map()
+      .set('key', 'value')
+      .set(objA, 1)
+      .set(objB, 2);
+
+    DomLog.log(map);
+
+    const result = appElement().textContent.replace(MULTI_NEWLINE_SPACE, '');
+
+    expect(result).toEqual('[["key","value"],[{"a":1},1],[{"b":2},2]]');
+  });
+
+  it('should display stringified Set as array of iterator ', () => {
+    const objA = { a: 1 };
+    const objB = { b: 2 };
+
+    const set = new Set()
+      .add('value')
+      .add(objA)
+      .add(objB);
+
+    DomLog.log(set);
+
+    const result = appElement().textContent.replace(MULTI_NEWLINE_SPACE, '');
+
+    expect(result).toEqual('["value",{"a":1},{"b":2}]');
   });
 });

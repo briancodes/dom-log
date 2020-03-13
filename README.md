@@ -35,6 +35,10 @@ The data displays in readable form, and happiness returns 👍
   <img alt="DomLog" src="https://user-images.githubusercontent.com/15702512/60740553-19cb3200-9f5e-11e9-8523-89182890226b.png">
 </p>
 
+## Map & Set
+
+Map and Set are stringified as Array representations of their Iterator objects
+
 ---
 
 ## API

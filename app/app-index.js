@@ -30,3 +30,20 @@ Array(len)
   .map((v, i) => i + 1)
   .forEach(v => DomLog.log(v));
 DomLog.sideBySide(len);
+
+const objA = { a: 1 };
+const objB = { b: 2 };
+
+const map = new Map()
+  .set('key', 'value')
+  .set(objA, 1)
+  .set(objB, 2);
+
+const set = new Set()
+  .add('value')
+  .add(objA)
+  .add(objB);
+
+DomLog.log('Map', map)
+  .log('Set', set)
+  .sideBySide();

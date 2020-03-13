@@ -41,13 +41,13 @@
     "access": "public"
   },
   "devDependencies": {
-    "@babel/core": "7.8.4",
-    "@types/jest": "25.1.1",
+    "@babel/core": "7.8.7",
+    "@types/jest": "25.1.4",
     "babel-preset-env": "1.7.0",
     "eslint": "6.8.0",
     "jest": "25.1.0",
     "microbundle": "0.11.0",
-    "np": "5.2.1",
+    "np": "6.2.0",
     "parcel-bundler": "1.12.4"
   }
 }

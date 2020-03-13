@@ -1,6 +1,6 @@
 {
   "name": "@bcodes/dom-log",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "description": "Log JSON stringified model objects to the DOM - side by side option, terminal styled",
   "author": "briancodes (http://bcodes.io)",
   "private": false,
